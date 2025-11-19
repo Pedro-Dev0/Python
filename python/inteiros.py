@@ -8,3 +8,6 @@ print(10.5 + 10.5)
 # boleanos - True ou False (abaixo)
 print(True)
 print(False)
+
+# modo interativo
+print("Python")
