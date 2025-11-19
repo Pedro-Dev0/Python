@@ -10,4 +10,4 @@ print(True)
 print(False)
 
 # modo interativo
-print("Python")
+print(Python)
