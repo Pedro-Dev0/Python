@@ -9,5 +9,5 @@ print(10.5 + 10.5)
 print(True)
 print(False)
 
-# modo interativo
-print(Python)
+# modo interativo colocar python no terminal
+
