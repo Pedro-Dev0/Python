@@ -17,7 +17,7 @@ print(f'Saldo após investimento dobrado: {saldo}')
 saldo /= 2  # atribuição com operador de divisão
 print(f'Saldo após retirada do investimento: {saldo}')
 
-saldo //= 1  # atribuição com operador de divisão inteira
+saldo //= 2  # atribuição com operador de divisão inteira
 print(f'Saldo após retirada inteira do investimento: {saldo}')
 
 saldo %= 300  # atribuição com operador de módulo
