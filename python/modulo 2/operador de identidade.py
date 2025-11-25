@@ -10,3 +10,9 @@ print(saldo is not limite)  # False
 print(nome_curso is not curso)  # False
 
 # No exemplo acima, 'nome_curso' aponta para o mesmo objeto que 'curso', então 'nome_curso is curso' retorna True.
+
+saldao = 300
+limitao = 400
+
+print(saldao is limitao) # False
+print(saldao is not limitao)  # True
