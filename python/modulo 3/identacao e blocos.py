@@ -33,33 +33,7 @@ def deposito_bancario(valor):
 
 deposito_bancario(1000)
 saque_bancario(200)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Exercício: Crie uma função para saque bancário que verifique se há saldo suficiente antes de permitir o saque.
 
 # como gravar o valor para sempre mostrar o saldo atualizado após cada saque?
 # Para manter o saldo atualizado após cada saque, você pode usar uma variável global ou encapsular o saldo em uma classe. Aqui está um exemplo usando uma variável global:
