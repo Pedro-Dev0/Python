@@ -4,7 +4,7 @@ def saque_bancario(valor):
     global saldo_banco  # Indica que estamos usando a variável global saldo_banco
     #valor = float(input("Digite o valor que deseja sacar: "))
 
-    if saldo_banco >= valor:
+    if saldo_banco >= valor: #pode fazer para ter limite máximo de saque também
         saldo_banco -= valor
         print("Saque realizado com sucesso!")
         print(f"Saldo restante: {saldo_banco}")
@@ -26,7 +26,7 @@ def deposito_bancario(valor):
     global saldo_banco  # Indica que estamos usando a variável global saldo_banco
     #valor = float(input("Digite o valor que deseja depositar: ")) #simulando input
 
-    if saldo_banco <= 0:
+    if saldo_banco <= 0: #pode fazer para ter limite máximo de depósito também
         saldo_banco += valor
         print("Depósito realizado com sucesso!")
         print(f"Saldo atualizado: {saldo_banco}")
