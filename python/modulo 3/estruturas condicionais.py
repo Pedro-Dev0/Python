@@ -1,9 +1,5 @@
 saldo_banco = 1000  # Exemplo de saldo inicial
 
-
-        
-
-
 def saque_bancario(valor):
     global saldo_banco  # Indica que estamos usando a variável global saldo_banco
     #valor = float(input("Digite o valor que deseja sacar: "))
