@@ -34,10 +34,10 @@ def deposito_bancario(valor):
     print("Obrigado por usar nosso banco! e feliz natal!")
 
 """deposito_bancario(1000)
-saque_bancario(200) """
+saque_bancario(200)"""
 # Exercício: Crie uma função para saque bancário que verifique se há saldo suficiente antes de permitir o saque.
 
-opcao = int(input(f"Digite 1 para sacar ou 2 depositar: "))
+opcao = int(input("Digite 1 para sacar ou 2 depositar: "))
 
 if opcao == 1:
     valor = float(input("Digite o valor que deseja sacar: "))
