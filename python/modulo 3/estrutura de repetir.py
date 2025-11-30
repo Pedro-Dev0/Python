@@ -10,7 +10,7 @@ else:
 
 # built-in functions: range
 for numero in range(1, 12, 2):
-    print(numero, end="...")
+    print(numero, end=" ")
 
 for numero in range(11):
     print(numero, end=" ")
