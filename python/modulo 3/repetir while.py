@@ -20,7 +20,9 @@ while True:
     print("Você digitou:", comando)
 
 
-for numero in range(100):
-    if numero == 55:
+for numero in range(1000000):
+    if numero == 50000:        
         break
     print(numero, end=" ")
+
+    # break para quebar o loop ou continue para pular para a próxima iteração informada
