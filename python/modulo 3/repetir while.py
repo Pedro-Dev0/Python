@@ -9,3 +9,5 @@ while opcao != 0:
         print("Depósito realizado com sucesso!")
     elif opcao == 0:
         print("Saindo...")
+
+# Estrutura de repetição com for é bom para quando sabe quantas vezes vai repetir caso contrário while é melhor para ser usado quando não sabe quantas vezes vai repetir até que a condição seja satisfeita. 
