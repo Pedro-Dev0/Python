@@ -55,3 +55,4 @@ for indice, carro in enumerate(carros):
     
 
 print(fruta_reserva)
+print(frutas)
