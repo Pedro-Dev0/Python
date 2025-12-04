@@ -39,3 +39,16 @@ print(frutas)
 # tem como colocar steps na hora de fatiar a lista 
 numeros = list(range(1, 11))
 print(numeros[::2]) # imprime os números de 2 em 2
+# imprimir de começo ao fim
+print(numeros[:])
+print(numeros[::]) # imprime todos os números
+
+carros = ["Ford", "BMW", "Volvo"]
+
+for carro in carros:
+    print(carro)
+
+# enumerate para pegar o índice e o valor
+for indice, carro in enumerate(carros):
+    print(f"{indice}:{carro}")
+    
