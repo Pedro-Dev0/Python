@@ -36,3 +36,6 @@ print(frutas)
 frutas.clear()
 print(frutas)
 
+# tem como colocar steps na hora de fatiar a lista 
+numeros = list(range(1, 11))
+print(numeros[::2]) # imprime os números de 2 em 2
