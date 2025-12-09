@@ -21,3 +21,8 @@ print(letras[0::2])
 print(letras[::])
 print(letras[::-1])
 print(letras[::-2])
+
+
+# veja aqui para fazer um banco é preciso
+banco = ("Itaú", "Bradesco", "Caixa", "Santander")
+print(banco)
