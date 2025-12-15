@@ -28,3 +28,31 @@ print(novo_dicionario)
 
 novo_dicionario["Telefone"] = "1234-5678" # adicionando novo par chave-valor
 print(novo_dicionario)
+
+# aninhamento de dicionarios    
+dicionario_aninhado = {
+    "pessoa1": {
+        "nome": "Ana",
+        "idade": 28
+    },
+    "pessoa2": {
+        "nome": "Carlos",
+        "idade": 32
+    }
+}
+
+print(dicionario_aninhado["pessoa1"]["nome"])  # Output: Ana
+print(dicionario_aninhado["pessoa2"]["nome"])  # Output: Carlos
+
+dicionario_aninhado["pessoa1"]["nome"] = "Rebecca"  # atualizando nome
+print(dicionario_aninhado["pessoa1"]["nome"])  # Output: Rebecca
+
+print(dicionario_aninhado["pessoa1"]["nome"])  # Output: Rebecca
+print(dicionario_aninhado["pessoa2"]["nome"])  # Output: Carlos
+
+for chave, valor in dicionario_aninhado.items(): # melhor forma de iterar
+    print(f"{chave}: {valor}") # imprime cada par chave-valor no dicionário aninhado
+
+
+for chave in dicionario_aninhado: # outra forma de iterar
+    print(f"{chave}: {dicionario_aninhado[chave]}") # imprime cada par chave-valor no dicionário aninhado
