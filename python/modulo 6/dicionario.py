@@ -18,7 +18,8 @@ meu_dicionario["idade"] = 26  # atualizando idade
 print(meu_dicionario)
 
 # removendo valores
-del meu_dicionario["cidade"]
+del meu_dicionario["cidade"] # removendo par chave-valor
+print(meu_dicionario)
 idade_removida = meu_dicionario.pop("idade") 
 
 # novos jeitos de criar dicionarios
@@ -56,3 +57,9 @@ for chave, valor in dicionario_aninhado.items(): # melhor forma de iterar
 
 for chave in dicionario_aninhado: # outra forma de iterar
     print(f"{chave}: {dicionario_aninhado[chave]}") # imprime cada par chave-valor no dicionário aninhado
+
+# metodos uteis de dicionarios
+dicionario_aninhado.copy() # cria uma copia do dicionario
+#dicionario_aninhado.clear() # limpa o dicionario
+dicionario_aninhado.fromkeys(["profissão", "telefone"]) # cria um novo dicionario com chaves especificas
+print(dicionario_aninhado) 
