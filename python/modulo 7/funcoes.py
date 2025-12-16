@@ -21,3 +21,12 @@ def saudacao_personalizada1(nome="Visitante"):
 
 saudacao_personalizada1()
 saudacao_personalizada1("Carlos")
+
+# chave valor de carros 
+
+def exibir_informacoes_carro(marca, modelo, ano):
+    print(f"inserido com sucesso! {marca}/ {modelo}/ {ano})")
+
+exibir_informacoes_carro(marca="Toyota", modelo="Corolla", ano=2020)
+exibir_informacoes_carro("Civic", "Honda", 2019)
+exibir_informacoes_carro(**{"marca": "Ford", "modelo": "Focus", "ano": 2018})
