@@ -44,3 +44,21 @@ resultado = calcular("+")(5, 3)
 print(resultado)
 resultado = calcular("-")(5, 3)
 print(resultado)
+
+def meu_decorador(funcao):
+    def envelope():
+        print("Executando antes da função")
+        funcao()
+        print("Executando depois da função")
+    return envelope
+
+@meu_decorador # açucar sintático para que não precise ficar atribuindo a função decorada a uma variável, nesse caso a própria função pega como referencia o meu decorador e junta com a função diz_ola
+def diz_ola():
+    print("Olá Mundo!")
+
+
+
+
+"""diz_ola = meu_decorador(diz_ola)"""
+diz_ola()
+
