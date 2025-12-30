@@ -1,4 +1,7 @@
+import functools
+
 def meu_decorador(funcao):
+    @functools.wraps(funcao)
     def envelope(*args, **kwargs):
         print("Executando antes da função")
         resultado = funcao(*args, **kwargs)
@@ -18,3 +21,6 @@ def diz_ola(nome, sobrenome="Silva"):
 
 resultado = diz_ola("Pedro")
 print(f"Resultado da função decorada: {resultado}")
+
+print(diz_ola.__name__)  # Isso mostrará 'envelope' sem o uso de functools.wraps
+print(diz_ola.__name__) # Isso mostrará 'diz_ola' com o uso de functools.wraps
