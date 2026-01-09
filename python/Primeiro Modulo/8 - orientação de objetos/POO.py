@@ -15,12 +15,15 @@ class bicicleta:
         return "A bicicleta está correndo"
     
     def sobre(self):
-        return f"Bicileta: Cor: {self.cor}, Modelo: {self.modelo}, Ano: {self.ano}, Valor: {self.valor}"
+        return f"Bicileta: Cor: {self.cor}, Modelo: {self.modelo}, Ano: {self.ano}, Valor: {self.valor}" # fazer mesma coisa em baixo com dict
+    
+    def to_dict(self):
+        return f"{self.__class__.__name__}: {', '.join([f'{chave}={valor}' for chave, valor in self.__dict__.items()])}"
     
 b2 = bicicleta("vermelha", "mountain bike", 2020, 1500)
 print(b2.buzinar())
 print(b2.parar())
 print(b2.correr())
-print(b2.sobre())
+print(b2.to_dict())
 
 b2.buzinar()
