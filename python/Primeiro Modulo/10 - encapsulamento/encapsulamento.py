@@ -21,5 +21,4 @@ class Conta:
     
 
 conta = Conta(100)
-print(conta.ver_saldo())  # Acessa      ndo o saldo via método público
-
+print(conta.ver_saldo())  # Acessando o saldo via método público
