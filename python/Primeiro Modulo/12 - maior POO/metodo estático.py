@@ -41,3 +41,22 @@ print(pessoa1)  # Nome: Carlos, Idade: 20
 #print(f"{pessoa1.nome} é {status_idade}")  # Carlos é Maior de idade
 
 # if e else ali continua sendo um metódo estático, pois não depende do estado da classe ou da instância e somente usa o valor passado como argumento para determinar o resultado da condição imposta que é se a idade é maior ou menor de idade...
+
+#cls e self não são usados em métodos estáticos, pois eles não recebem automaticamente a referência para a classe ou a instância.
+
+# e como usar metodos de classe e quando?
+## métodos de classe são usados quando você precisa acessar ou modificar o estado da classe, como variáveis de classe, ou quando você quer criar métodos que sejam relevantes para a classe como um todo, em vez de para instâncias específicas.
+
+class Circulo:
+    pi = 3.14159  # Variável de classe
+
+    def __init__(self, raio):
+        self.raio = raio  # Variável de instância
+
+    @classmethod
+    def area(cls, raio):
+        return cls.pi * (raio ** 2)
+    
+# Usando o método de classe
+area_circulo = Circulo.area(5)
+print(f"Área do círculo: {area_circulo}")
