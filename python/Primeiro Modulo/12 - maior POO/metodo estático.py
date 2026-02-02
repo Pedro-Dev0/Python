@@ -25,8 +25,8 @@ class Pessoa:
     def __str__(self):
         return f"Nome: {self.nome}, Idade: {self.idade}, {Pessoa.idade_maior_ou_menor(self.idade)}"
 
-    @staticmethod
-    def idade_maior_ou_menor(idade):
+    @classmethod
+    def idade_maior_ou_menor(cls, idade):
         if idade >= 18:
             return "Maior de idade"
         else:
