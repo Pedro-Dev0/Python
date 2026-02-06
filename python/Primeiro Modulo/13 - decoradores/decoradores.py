@@ -12,3 +12,6 @@ def minha_funcao():
 minha_funcao()  # Chama a função decorada
 
 #meu_decorador(minha_funcao)()  # Chama a função decorada
+
+# decorado nada mais é do que uma função que recebe que é gravada por return e retorna outra função por argumento ou seja a função decorada 
+
