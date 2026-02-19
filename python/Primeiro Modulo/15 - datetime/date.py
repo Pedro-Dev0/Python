@@ -1,4 +1,4 @@
-from datetime import date, datetime
+from datetime import date, datetime, time
 
 #hora formatada e dia
 data_atual = date.today()
@@ -17,3 +17,8 @@ print(data)
 
 data1 = datetime(2025, 8, 15, 10, 30, 45) # isso é data e hora, não só data
 print(data1)
+print(datetime.today())
+print(date.today())
+
+hora = time(14, 30, 45) # isso é só hora, não tem data
+print(hora)
