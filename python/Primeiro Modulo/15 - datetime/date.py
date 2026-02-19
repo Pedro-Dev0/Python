@@ -14,3 +14,6 @@ print(data_hora_formatada)
 
 data = date(2025, 8, 15)
 print(data)
+
+data1 = datetime(2025, 8, 15, 10, 30, 45) # isso é data e hora, não só data
+print(data1)
