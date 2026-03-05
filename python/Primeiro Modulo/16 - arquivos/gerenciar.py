@@ -23,3 +23,14 @@ file.close
 #remover arquivo
 #os.remove('C:/Users/Malleus/Documents/GitHub/Python/python/Primeiro Modulo/16 - arquivos/bbnomoney.txt')
 
+try:
+    shutil.move('C:/Users/Malleus/Documents/GitHub/Python/girikakuri.txt' , 'C:/Users/Malleus/Documents/GitHub/Python/python/Primeiro Modulo/16 - arquivos')
+except FileNotFoundError as exc:
+    print('Arquivo não encontrado')
+    print(exc)
+
+try:
+    file = open('C:/Users/Malleus/Documents/GitHub/Python/python/Primeiro Modulo/', 'r')
+except PermissionError as exc:
+    print('não foi possivel abrir o arquivo')
+    print(exc)
