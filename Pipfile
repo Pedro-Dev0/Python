@@ -9,6 +9,7 @@ pyautogui = "*"
 django = "*"
 flake8 = "*"
 black = "*"
+isort = "*"
 
 [dev-packages]
 
