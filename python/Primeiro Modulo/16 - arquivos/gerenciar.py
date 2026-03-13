@@ -33,4 +33,4 @@ try:
     file = open('C:/Users/Malleus/Documents/GitHub/Python/python/Primeiro Modulo/', 'r')
 except PermissionError as exc:
     print('não foi possivel abrir o arquivo')
-    print(exc) 
+    print(exc)
