@@ -4,11 +4,12 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-numpy = "*"
-pyautogui = "*"
-django = "*"
 flake8 = "*"
 black = "*"
+django = "*"
+pyautogui = "*"
+numpy = "*"
+pandas = "*"
 isort = "*"
 
 [dev-packages]
