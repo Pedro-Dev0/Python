@@ -16,7 +16,7 @@ cursor.execute("""
 """)
 
 # Insere dados
-data = ("Pedro", "Pedro@123.com")
+data = ("Murilo", "Murilao@123.com")
 cursor.execute(
     "INSERT INTO clientes (nome, email) VALUES (?, ?)",
     data
