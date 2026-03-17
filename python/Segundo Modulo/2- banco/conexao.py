@@ -23,7 +23,7 @@ def criar_tabela(conexao, cursor):
 def inserir_registro(conexao, cursor, nome, email):
     data = (nome, email)
     cursor.execute(
-    "INSERT OR IGNORE INTO clientes (nome, email) VALUES (?, ?)",
+    "INSERT OR IGNORE INTO clientes (nome, email) VALUES (?,?)",
     data
     )
     conexao.commit()
