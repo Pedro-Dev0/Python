@@ -18,8 +18,13 @@ cursor.execute("""
 # Insere dados
 data = ("Murilo", "Murilao@123.com")
 cursor.execute(
-    "INSERT INTO clientes (nome, email) VALUES (?, ?)",
+    "INSERT OR REPLACE INTO clientes (nome, email) VALUES (?, ?)",
     data
+)
+
+update = ("Murilox", 2)
+cursor.execute(
+    "UPDATE clientes SET nome = ? WHERE id = ?", update
 )
 
 conexao.commit()
