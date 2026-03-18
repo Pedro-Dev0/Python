@@ -33,13 +33,21 @@ def atualizar_registro(conexao, cursor, nome, email, id):
     update = (nome, email, id)
     cursor.execute("UPDATE clientes SET nome=?, email=? WHERE id=?", update)
     conexao.commit()
-    conexao.close()
     print("✅ Dados atualizados!")
+
+def excluir_registro(conexao, cursor, id):
+    excluir = (id,)
+    cursor.execute("DELETE FROM clientes WHERE id=?", excluir)
+    conexao.commit()
+    conexao.close()
+    print("✅ Dados deletados!")
 
 atualizar_registro(
     conexao,
     cursor,
     "Lara",
     "Lara@gamil",
-    5,
+    4,
 )
+
+#excluir_registro(conexao, cursor, 5)
