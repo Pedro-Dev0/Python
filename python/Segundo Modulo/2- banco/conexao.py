@@ -45,19 +45,22 @@ def inserir_registros(conexao, cursor, dados):
     print("✅ Dados inseridos!")
 
 def recuperar_cliente(cursor, id):
+    cursor.row_factory = sqlite3.Row
     cursor.execute("SELECT * FROM clientes WHERE id=?", (id,))
     return cursor.fetchone()
 
 def listar_clientes(cursor):
     return cursor.execute("SELECT * FROM clientes")
 
-
-cliente = recuperar_cliente(cursor, 2)
-print(cliente)
-
 clientes = listar_clientes(cursor)
 for cliente in clientes:
     print(cliente)
+
+cliente = recuperar_cliente(cursor, 12)
+print(dict(cliente))
+print(cliente["id"], cliente["nome"], cliente["email"])
+
+print(f"Seja bem vido ao sistema {cliente['nome']}")
 
 
 """
