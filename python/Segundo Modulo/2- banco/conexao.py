@@ -39,8 +39,15 @@ def excluir_registro(conexao, cursor, id):
     excluir = (id,)
     cursor.execute("DELETE FROM clientes WHERE id=?", excluir)
     conexao.commit()
-    conexao.close()
     print("✅ Dados deletados!")
+
+def inserir_registros(conexao, cursor, dados):
+    cursor.executemany("INSERT INTO clientes (nome, email) VALUES (?, ?)", dados)
+    conexao.commit()
+    conexao.close()
+    print("✅ Dados inseridos!")
+
+
 
 atualizar_registro(
     conexao,
@@ -50,4 +57,14 @@ atualizar_registro(
     4,
 )
 
-#excluir_registro(conexao, cursor, 5)
+#excluir_registro(conexao, cursor, 9)
+
+"""dados = [
+    ("Rubens", "rubens@gmail.com"),
+    ("Gimenes", "Ximenes@gmail.com"),
+    ("Isabela", "isabela@gmail.com"),
+    ("Rafaela", "rafaela@gmail.com"),
+]
+
+inserir_registros(conexao, cursor, dados)
+"""
