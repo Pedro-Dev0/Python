@@ -62,7 +62,6 @@ print(cliente["id"], cliente["nome"], cliente["email"])
 
 print(f"Seja bem vido ao sistema {cliente['nome']}")
 
-
 """
 atualizar_registro(
     conexao,
