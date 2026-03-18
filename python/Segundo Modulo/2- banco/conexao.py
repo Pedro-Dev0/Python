@@ -19,15 +19,12 @@ def criar_tabela(conexao, cursor):
     """)
     conexao.commit()
     print("✅ Tabela criada!")
-
-
 # Insere dados
 def inserir_registro(conexao, cursor, nome, email):
     data = (nome, email)
     cursor.execute("INSERT OR IGNORE INTO clientes (nome, email) VALUES (?,?)", data)
     conexao.commit()
     print("✅ Dados inseridos!")
-
 
 def atualizar_registro(conexao, cursor, nome, email, id):
     update = (nome, email, id)
@@ -47,15 +44,30 @@ def inserir_registros(conexao, cursor, dados):
     conexao.close()
     print("✅ Dados inseridos!")
 
+def recuperar_cliente(cursor, id):
+    cursor.execute("SELECT * FROM clientes WHERE id=?", (id,))
+    return cursor.fetchone()
+
+def listar_clientes(cursor):
+    return cursor.execute("SELECT * FROM clientes")
 
 
+cliente = recuperar_cliente(cursor, 2)
+print(cliente)
+
+clientes = listar_clientes(cursor)
+for cliente in clientes:
+    print(cliente)
+
+
+"""
 atualizar_registro(
     conexao,
     cursor,
     "Lara",
     "Lara@gamil",
     4,
-)
+)"""
 
 #excluir_registro(conexao, cursor, 9)
 
