@@ -36,5 +36,10 @@ def atualizar_registro(conexao, cursor, nome, email, id):
     conexao.close()
     print("✅ Dados atualizados!")
 
-
-atualizar_registro(conexao, cursor, "GUI", "GUIMESs@gmail.com", 5)
+atualizar_registro(
+    conexao,
+    cursor,
+    "Lara",
+    "Lara@gamil",
+    5,
+)
