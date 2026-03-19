@@ -47,7 +47,9 @@ def inserir_registros(conexao, cursor, dados):
 def recuperar_cliente(cursor, id):
     cursor.row_factory = sqlite3.Row
     cursor.execute("SELECT * FROM clientes WHERE id=?", (id,))
+    print("✅ Dados vistos")
     return cursor.fetchone()
+    
 
 def listar_clientes(cursor):
     return cursor.execute("SELECT * FROM clientes")
