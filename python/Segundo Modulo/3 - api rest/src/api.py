@@ -8,18 +8,20 @@ def hello_world(usuario, idade, altura):
     print(type(idade))
     print(altura)
     print(type(altura))
-    return f"<p>Hello World! {usuario.upper()}, idade:{idade}</p>"
+    return {
+        'nome': usuario,
+        'idade': idade,
+        'altura': altura,
+    }
 
 @app.route("/bemvindo", methods=["GET", "POST"])
 def bem_vindo():
-    if request.method == "GET":
-        return 'É get'
-    else:
-        return 'We Post'
-
+    return {
+        'message': 'Olá mundo'
+    }
 
 #na rota com ("/bemvindo/") vai redirecionar para a pagina correta, sem / no final ai a pagina é unica e se for colocada da erro!
 
 with app.test_request_context():
     print(url_for('hello_world', usuario='pedro', idade=23, altura=1.89))
-    print(url_for('bem_vindo'))
+    print(url_for('bem_vindo', next="/"))
