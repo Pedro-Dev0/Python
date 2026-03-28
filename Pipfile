@@ -12,6 +12,8 @@ numpy = "*"
 pandas = "*"
 isort = "*"
 flask = "*"
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
 
 [dev-packages]
 

@@ -1,10 +1,30 @@
-from flask import Flask
+import os
+from flask import Flask, current_app
+from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.orm import DeclarativeBase
+import click
+
+class Base(DeclarativeBase):
+    pass
+
+db = SQLAlchemy(model_class=Base)
+
+@click.command("init-db")
+def init_db_command():
+    global db
+    with current_app.app_context():
+        db.create_all()
+    click.echo("initialized the database")
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
+    
+    # CORREÇÃO AQUI 👇
+    db_path = os.path.join(app.instance_path, "diobank.sqlite")
+    
     app.config.from_mapping(
         SECRET_KEY="dev",
-        DATABASE="diobank.sqlite"
+        SQLALCHEMY_DATABASE_URI=f"sqlite:///{db_path}"  # <-- Adicionei sqlite:/// 
     )
 
     if test_config is None:
@@ -12,8 +32,7 @@ def create_app(test_config=None):
     else:
         app.config.from_mapping(test_config)
 
-    from . import db
-
+    app.cli.add_command(init_db_command)
     db.init_app(app)
 
     return app
