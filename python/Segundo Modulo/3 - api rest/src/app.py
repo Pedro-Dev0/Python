@@ -19,12 +19,18 @@ def init_db_command():
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     
-    # CORREÇÃO AQUI 👇
-    db_path = os.path.join(app.instance_path, "diobank.sqlite")
+    # CRIA A PASTA instance/ SE NÃO EXISTIR
+    try:
+        os.makedirs(app.instance_path)
+    except OSError:
+        pass
+    
+    # USA CAMINHO ABSOLUTO DENTRO DA PASTA instance
+    db_path = os.path.join(app.instance_path, "dio_bank.sqlite")
     
     app.config.from_mapping(
         SECRET_KEY="dev",
-        SQLALCHEMY_DATABASE_URI=f"sqlite:///{db_path}"  # <-- Adicionei sqlite:/// 
+        SQLALCHEMY_DATABASE_URI=f"sqlite:///{db_path}"  # ← caminho completo
     )
 
     if test_config is None:
