@@ -9,6 +9,14 @@ class Base(DeclarativeBase):
 
 db = SQLAlchemy(model_class=Base)
 
+class User:
+    pass
+
+class Post:
+    pass
+
+
+
 @click.command("init-db")
 def init_db_command():
     global db
