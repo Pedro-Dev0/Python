@@ -14,7 +14,7 @@ app.route('/', methods=['GET', 'POST'])
 def handle_user():
     if request.method == 'POST':
         _create_user()
-        return {'message:' 'User created!' }, HTTPStatus.CREATED
+        return {'message': 'User created!' }, HTTPStatus.CREATED
     else:
-        pass
+        return {'users': []}
     
