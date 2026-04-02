@@ -50,7 +50,7 @@ def create_app(test_config=None):
         pass
     
     # USA CAMINHO ABSOLUTO DENTRO DA PASTA instance
-    db_path = os.path.join(app.instance_path, "dio_bank.sqlite")
+    db_path = os.path.join(app.instance_path, "blog.sqlite")
     
     app.config.from_mapping(
         SECRET_KEY="dev",
