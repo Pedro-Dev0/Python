@@ -6,11 +6,14 @@ app = Blueprint('user', __name__, url_prefix='/users')
 
 def _create_user():
     data = request.json
-    user = User(username=data["username"])
+    user = User(
+        username=data["username"],
+        email=data["email"]
+    )
     db.session.add(user)
     db.session.commit()
 
-app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def handle_user():
     if request.method == 'POST':
         _create_user()
