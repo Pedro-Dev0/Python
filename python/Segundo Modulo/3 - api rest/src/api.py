@@ -20,12 +20,6 @@ def bem_vindo():
         'message': 'Olá mundo'
     }
 
-@app.route("/bemvindo", methods=["GET", "POST"])
-def bem_vindo():
-    return {
-        'message': 'Olá mundo'
-    }
-
 #na rota com ("/bemvindo/") vai redirecionar para a pagina correta, sem / no final ai a pagina é unica e se for colocada da erro!
 
 with app.test_request_context():

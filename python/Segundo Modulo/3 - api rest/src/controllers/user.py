@@ -49,9 +49,25 @@ def get_user(user_id):
 
 @app.route('/<int:user_id>', methods=['PATCH', 'PUT'])
 def update_user(user_id):
+    # 1. Busca o usuário ou retorna 404 (Estilo do Professor)
     user = db.get_or_404(User, user_id)
-    return {
-        "id": user_id,
-        "username": user.username,
-    }
+    data = request.json
+
+    # 2. Lógica Dinâmica: Definimos quais campos PODEM ser editados
+    attrs = ['username', 'email']
+    # 3. O "Pulo do Gato": Percorremos a lista e atualizamos apenas o que foi enviado
+    for attr in attrs:
+        if attr in data:
+            setattr(user, attr, data[attr])
     
+    try:
+        db.session.commit()
+    except IntegrityError:
+        db.session.rollback()
+        return {"error": "Username já existe"}, HTTPStatus.CONFLICT
+
+    return {
+        "id": user.id,
+        "username": user.username,
+        "email": user.email
+    }
