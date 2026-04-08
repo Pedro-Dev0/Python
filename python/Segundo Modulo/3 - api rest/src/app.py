@@ -7,11 +7,15 @@ from sqlalchemy import Integer, String
 from sqlalchemy.orm import Mapped, mapped_column
 import click
 from datetime import datetime
+from flask_migrate import Migrate
+
 
 class Base(DeclarativeBase):
     pass
 
 db = SQLAlchemy(model_class=Base)
+migrate = Migrate()
+
 
 class User(db.Model):
     id: Mapped[int] = mapped_column(sa.Integer, primary_key=True)
@@ -64,6 +68,8 @@ def create_app(test_config=None):
 
     app.cli.add_command(init_db_command)
     db.init_app(app)
+    migrate.init_app(app, db)
+
 
     from src.controllers import user
     from src.controllers import post
